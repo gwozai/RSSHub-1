@@ -468,6 +468,20 @@ Solidot 提供的 feed:
 
 </Route>
 
+## The Atlantic
+
+### News
+
+<Route author="NavePnow" example="/theatlantic/latest" path="/theatlantic/:category" :paramsDesc="['分类, 见下表']">
+
+| Popular      | Latest | Politics | Technology | Business |
+| ------------ | ------ | -------- | ---------- | -------- |
+| most-popular | latest | politics | technology | business |
+
+More categories (except photo) can be found within the navigation bar at <https://www.theatlantic.com/>
+
+</Route>
+
 ## The Economist
 
 ### 分类
@@ -1182,7 +1196,19 @@ IT・科学 tech_science
 
 ### 新闻
 
-<Route author="oppilate" example="/wsj/en-us/opinion" path="/wsj/:lang/:category?" :paramsDesc="['语言，支持 `en-us`、`zh-cn`、`zh-tw`', '分类，仅 `en-us` 支持分类订阅。支持 `opinion`, `world_news`, `us_bussiness`, `market_news`, `technology`, `lifestyle`。']">
+<Route author="oppilate NavePnow" example="/wsj/en-us/opinion" path="/wsj/:lang/:category?" :paramsDesc="['语言，支持 `en-us`、`zh-cn`、`zh-tw`', '分类，见下表']">
+
+en_us
+
+| World | U.S. | Politics | Economy | Business | Tech       | Markets | Opinion | Books & Arts | Real Estate | Life & Work | Sytle               | Sports |
+| ----- | ---- | -------- | ------- | -------- | ---------- | ------- | ------- | ------------ | ----------- | ----------- | ------------------- | ------ |
+| world | us   | politics | economy | business | technology | markets | opinion | books-arts   | realestate  | life-work   | style-entertainment | sports |
+
+zh-cn / zh-tw
+
+| 国际    | 中国    | 金融市场    | 经济      | 商业       | 科技         | 派         | 专栏与观点   |
+| ----- | ----- | ------- | ------- | -------- | ---------- | --------- | ------- |
+| world | china | markets | economy | business | technology | life-arts | opinion |
 
 通过提取文章全文，以提供比官方源更佳的阅读体验。
 
@@ -2460,6 +2486,17 @@ category 对应的关键词有
 | 浙江日报 | 钱江晚报 | 美术报 | 浙江老年报 | 浙江法制报 | 江南游报 |
 | ---- | ---- | --- | ----- | ----- | ---- |
 | zjrb | qjwb | msb | zjlnb | zjfzb | jnyb |
+
+</Route>
+
+## 中国环球电视网
+
+### 播客
+
+<Route author="5upernova-heng" example="/cgtn/podcast/ezfm/4" path="/cgtn/podcast/:category/:id" :paramsDesc="['类型名','播客 id']" radar=1> 
+
+> 类型名与播客 id 可以在播客对应的 URL 中找到
+> 如 URL `https://radio.cgtn.com/podcast/column/ezfm/More-to-Read/4` ，其 `category` 为 `ezfm` ，`id` 为 `4`，对应的订阅路由为 [`/podcast/ezfm/4`](https://rsshub.app/podcast/ezfm/4)
 
 </Route>
 
